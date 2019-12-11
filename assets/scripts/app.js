@@ -1,5 +1,5 @@
 'use strict'
-
+const authEvents = require('./authAPI/events.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -7,5 +7,6 @@
 // require('./example')
 
 $(() => {
+  authEvents.addHandlers()
   // your JS code goes here
 })

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Sleep Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,36 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Sleep Tracker</h1>
+      <h3> Welcome to sleep tracker! </h3>
+      <div class= "user-message"> </div>
+      <div class= "before-auth">
+        <h4> New Here? Sign up!</h4>
+        <form class="sign-up">
+              <input type="email" name="credentials[email]" placeholder="email">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation">
+              <button class="btn btn-primary"> Submit </button>
+        </form>
+      <h3> Been Here Before? Sign In</h3>
+      <form class="sign-in">
+        <input type="email" name="credentials[email]" placeholder="email">
+        <input type="password" name="credentials[password]" placeholder="password">
+        <button class="btn btn-primary"> Submit </button>
+      </form>
+      </div>
+      <div class="after-auth">
+        <nav>
+          <form id="change-password">
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <input type="password" name="passwords[new]" placeholder="new password">
+            <button class="btn btn-primary"> Change Password </button>
+          </form>
+          <!-- <h4> Sign out </h4> -->
+          <form id="sign-out">
+            <button class="btn btn-danger"> Sign Out </button>
+          </form>
+        </nav>
+      </div>
     </body>
 </html>
