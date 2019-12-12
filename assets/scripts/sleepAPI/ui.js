@@ -9,10 +9,16 @@ const getSleepsSuccess = (data) => {
   $('.content').html(showSleepsHtml)
 }
 
-const getSleepsFailure = () => {
-  console.log('yikes something went wrong')
+const createSleepSuccess = () => {
+  $('.user-message').text('you logged your sleep')
 }
+
+const failure = () => {
+  $('.content').text('yikes.. something went wrong')
+}
+
 module.exports = {
   getSleepsSuccess,
-  getSleepsFailure
+  createSleepSuccess,
+  failure
 }
