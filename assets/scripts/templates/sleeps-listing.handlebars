@@ -1,0 +1,30 @@
+{{#each sleeps as |sleep|}}
+  {{log sleep}}
+  <section data-id="{{sleep.id}}" class ='book_listing'>
+    <h6>Hours:</h6>
+    <h3>
+      {{sleep.hours}}
+    </h3>
+    <h6>Date:</h6>
+    <p>
+        {{sleep.date}}
+    </p>
+    <h6>Date:</h6>
+    <p>
+        {{sleep.date}}
+    </p>
+    <h6>Exercise:</h6>
+    <p>
+        {{sleep.exercise}}
+    </p>
+    <h6>Food:</h6>
+    <p>
+        {{sleep.food}}
+    </p>
+
+
+    <btn class= "btn btn-danger delete" data-id="{{sleep.id}}"> delete <btn>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}
