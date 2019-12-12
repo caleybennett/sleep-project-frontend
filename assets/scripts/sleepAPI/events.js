@@ -13,11 +13,12 @@ const ui = require('./ui.js')
 // a function to get all the sleeps
 const onGetSleeps = event => {
   event.preventDefault()
-  console.log('get sleeps is running')
+  console.log('on get sleeps is running')
 
   api.getSleeps()
     .then(console.log('get sleep api is running'))
-    .catch(ui.ongetSleepFailure)
+    .then(ui.getSleepsSuccess)
+    .catch(ui.getSleepsFailure)
 }
 
 const addHandlers = event => {
