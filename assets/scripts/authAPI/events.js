@@ -3,7 +3,6 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormField = require('../../../lib/get-form-fields')
 
-
 // a function to let a user sign up
 const onSignUp = function (event) {
   event.preventDefault()

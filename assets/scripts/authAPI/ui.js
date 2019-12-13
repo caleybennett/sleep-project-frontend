@@ -49,6 +49,7 @@ const onChangePasswordFailure = () => {
 const onSignOutSuccess = () => {
   onSuccess('You successfully signed out')
   store.user = {}
+  store.sleep = {}
   $('.after-auth').hide()
   $('.before-auth').show()
   $('.account-info').hide()

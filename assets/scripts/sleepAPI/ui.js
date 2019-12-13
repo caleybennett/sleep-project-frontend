@@ -1,7 +1,7 @@
 'use strict'
 
 const getSleepsTemplate = require('../templates/sleeps-listing.handlebars')
-const events = require('./events')
+const store = require('../store.js')
 
 const getSleepsSuccess = (data) => {
   console.log('get sleeps success is working!')
@@ -9,6 +9,9 @@ const getSleepsSuccess = (data) => {
   const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
   $('.content').html(showSleepsHtml)
   $('.get-sleeps').hide()
+  store.sleeps = data.sleeps
+  console.log('store.sleep is', store.sleeps)
+  console.log('data.sleep is', data.sleeps)
 }
 
 const createSleepSuccess = () => {
@@ -31,25 +34,25 @@ const failure = () => {
   $('.content').text('yikes.. something went wrong')
 }
 
-let getOneSleepData
-
-const getOneSleep = (data) => {
-  data = getOneSleepData
-  // console.log('get one success is working!')
-  // console.log('data is:', data)
-  // console.log('formData is', formData)
-  //
-  // if (formData === data.date) {
-  //   const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
-  //   $('.content').html(showSleepsHtml)
-  // }
-}
+// let getOneSleepData
+//
+// const getOneSleep = (data) => {
+//   data = getOneSleepData
+//   // console.log('get one success is working!')
+//   // console.log('data is:', data)
+//   // console.log('formData is', formData)
+//   //
+//   // if (formData === data.date) {
+//   //   const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
+//   //   $('.content').html(showSleepsHtml)
+//   // }
+// }
 
 module.exports = {
   getSleepsSuccess,
   createSleepSuccess,
   failure,
   clearSleeps,
-  updateSleep,
-  getOneSleep
+  updateSleep
+  // getOneSleep
 }

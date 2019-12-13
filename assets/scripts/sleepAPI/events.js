@@ -2,6 +2,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormField = require('../../../lib/get-form-fields')
 const getSleepsTemplate = require('../templates/sleeps-listing.handlebars')
+const store = require('../store.js')
 // example from auth api
 // const onSignUp = function (event) {
 //   event.preventDefault()
@@ -71,42 +72,68 @@ const onHideAccountInfo = event => {
   $('.account-info').hide()
   $('.account-info-btn').show()
 }
-const sleepByDate = []
-
-const oneSleep = (formData, data) => {
-  if (formData === data.date) {
-    sleepByDate.push(sleepByDate)
-    console.log(sleepByDate)
-  }
-}
+// const sleepByDate = []
+//
+// const oneSleep = (formData, data) => {
+//   if (formData === data.date) {
+//     sleepByDate.push(sleepByDate)
+//     console.log(sleepByDate)
+//   }
+// }
 // want to show a nights sleep by
-let formData
-const data = ui.getOneSleepData
+// let formData
+// const data = ui.getOneSleepData
+//
+// const sleepByDate = []
 
 const onShowSleep = event => {
   event.preventDefault()
 
   const sleepdata = event.target
-  formData = getFormField(sleepdata)
-
+  const formData = getFormField(sleepdata)
+  console.log(formData)
+  const data = store.sleeps
   console.log(data)
+
+  const showSleep = sleep => {
+    return sleep.date === formData.sleep.date
+  }
+  //
+
+  api.getSleeps()
+    .then((res) => {
+      console.log('api is making the request. formData is', formData)
+      const results = res.sleeps.filter(showSleep)
+      return results
+    })
+    .then((results) => {
+      if (results.length !== 0) {
+        const showSleepsHtml = getSleepsTemplate({ sleeps: results })
+        $('.content').html(showSleepsHtml)
+      } else if (results.length < 1) {
+        $('.user-message').text('That date doesnt exsist!!')
+      }
+      console.log('results  is', results)
+    })
+    .catch(ui.failure)
+
+  //   console.log(data)
 
   // console.log('get one success is working!')
   // console.log('data is:', data)
   // console.log('formData is', formData)
   //
   // if (formData === data.date) {
-  //   const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
-  //   $('.content').html(showSleepsHtml)
+
   // }
   // make a get request to the api to get all the sleeps
-  api.getSleeps()
-    .then(ui.getOneSleep)
-    .then(console.log('get sleeps works'))
-    .then(oneSleep(formData, data))
-    .catch(ui.failure)
+
+  //   .then(ui.getOneSleep)
+  //   .then(console.log('get sleeps works'))
+  //   .then(oneSleep(formData, data))
+  //   .catch(ui.failure)
   // console.log(formData)
-  console.log(sleepByDate)
+//   console.log(sleepByDate)
 }
 
 const addHandlers = event => {
@@ -121,6 +148,5 @@ const addHandlers = event => {
 }
 
 module.exports = {
-  addHandlers,
-  formData
+  addHandlers
 }
