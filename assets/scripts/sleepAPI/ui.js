@@ -1,6 +1,7 @@
 'use strict'
 
 const getSleepsTemplate = require('../templates/sleeps-listing.handlebars')
+const events = require('./events')
 
 const getSleepsSuccess = (data) => {
   console.log('get sleeps success is working!')
@@ -25,8 +26,23 @@ const updateSleep = () => {
   $('form').trigger('reset')
   $('.user-message').text('you updated your sleep')
 }
+
 const failure = () => {
   $('.content').text('yikes.. something went wrong')
+}
+
+let getOneSleepData
+
+const getOneSleep = (data) => {
+  data = getOneSleepData
+  // console.log('get one success is working!')
+  // console.log('data is:', data)
+  // console.log('formData is', formData)
+  //
+  // if (formData === data.date) {
+  //   const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
+  //   $('.content').html(showSleepsHtml)
+  // }
 }
 
 module.exports = {
@@ -34,5 +50,6 @@ module.exports = {
   createSleepSuccess,
   failure,
   clearSleeps,
-  updateSleep
+  updateSleep,
+  getOneSleep
 }
