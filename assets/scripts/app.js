@@ -10,5 +10,6 @@ const sleepEvents = require('./sleepAPI/events.js')
 $(() => {
   authEvents.addHandlers()
   sleepEvents.addHandlers()
+
   // your JS code goes here
 })

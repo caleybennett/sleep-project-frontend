@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const sleepui = require('../sleepAPI/ui.js')
 
 const onSuccess = message => {
   $('.user-message')
@@ -50,6 +51,8 @@ const onSignOutSuccess = () => {
   store.user = {}
   $('.after-auth').hide()
   $('.before-auth').show()
+  $('.account-info').hide()
+  sleepui.clearSleeps()
 }
 
 const onSignOutFailure = () => {

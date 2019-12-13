@@ -1,10 +1,10 @@
 {{#each sleeps as |sleep|}}
   {{log sleep}}
-  <section data-id="{{sleep.id}}" >
+  <section data-id="{{sleep.id}}" class="sleep-log" >
     <h6>Hours:</h6>
-    <h3>
+    <h4>
       {{sleep.hours}}
-    </h3>
+    </h4>
     <h6>Date:</h6>
     <p>
         {{sleep.date}}

@@ -31,7 +31,10 @@
       </form>
       </div>
       <div class="after-auth">
+        <button class="btn btn-link account-info-btn"> Account info </button>
+        <div class="account-info">
         <nav>
+          <button class="btn btn-link  account-info-hide"> hide </button>
           <form class="change-password">
             <input type="password" name="passwords[old]" placeholder="old password">
             <input type="password" name="passwords[new]" placeholder="new password">
@@ -42,6 +45,7 @@
             <button class="btn btn-danger"> Sign Out </button>
           </form>
         </nav>
+      </div>
         <div>
           <form class="create-sleep">
             <input type="date" name="sleep[date]" placeholder="date">
@@ -53,6 +57,7 @@
           <form class="get-sleeps">
             <button class="btn btn-primary get-sleeps"> Get sleeps! </button>
           </form>
+          <button class="btn btn-primary clear-sleeps"> Clear sleeps! </button>
         </div>
         <div class="content"> </div>
       </div>
