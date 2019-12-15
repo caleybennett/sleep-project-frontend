@@ -10,8 +10,9 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Noto+Sans+JP&display=swap" rel="stylesheet">
     </head>
-    <body>
+      <body>
       <h1>Sleep Tracker</h1>
       <h3> Welcome to sleep tracker! </h3>
       <div class= "user-message"> </div>
@@ -23,7 +24,7 @@
               <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation">
               <button class="btn btn-primary"> Submit </button>
         </form>
-      <h3> Been Here Before? Sign In</h3>
+      <h4> Been Here Before? Sign In</h4>
       <form class="sign-in">
         <input type="email" name="credentials[email]" placeholder="email">
         <input type="password" name="credentials[password]" placeholder="password">
@@ -55,14 +56,17 @@
             <button class="btn btn-primary"> Log your sleep </button>
           </form>
           <form class="get-sleeps">
-            <button class="btn btn-primary get-sleeps"> Get sleeps! </button>
+            <button class="btn btn-primary get-sleeps"> Get all sleeps! </button>
           </form>
           <form class="get-sleeps-bydate">
+            <input type="date" name="sleep[date]" placeholder="date">
             <button class="btn btn-primary get-sleeps-bydate"> Get one night's sleep! </button>
-          <input type="date" name="sleep[date]" placeholder="date">
           </form>
           <button class="btn btn-primary clear-sleeps"> Clear sleeps! </button>
         </div>
+        <!-- <form class="avg-sleeps">
+          <input class="start-date" type="date" name="sleep[date]" placeholder="start date">
+          <input type="date" name="sleep[date]" placeholder="end date"> -->
         <div class="content"> </div>
       </div>
     </body>

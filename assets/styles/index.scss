@@ -3,7 +3,12 @@ body {
   text-align: center;
   background-image: url('https://www.healthysleeptexas.com/wp-content/themes/hst/i/bg-body.jpg');
   color: white;
-  padding: 20px
+  padding: 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+h1 {
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .account-info {
@@ -12,6 +17,10 @@ body {
 
 .clear-sleeps {
   display: none;
+}
+
+.user-message {
+  color: rgb(208, 213, 250)
 }
 
 .success {
@@ -37,6 +46,8 @@ body {
   font-size: 2em;
 }
 
+
+
 .after-auth {
   display: none;
 }
@@ -49,4 +60,8 @@ body {
   justify-content: center;
   margin: 0 auto;
   padding: 20px;
+}
+
+.user-message {
+  color: rgb(208, 213, 250)
 }

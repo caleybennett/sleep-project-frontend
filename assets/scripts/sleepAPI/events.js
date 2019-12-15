@@ -88,7 +88,7 @@ const onHideAccountInfo = event => {
 
 const onShowSleep = event => {
   event.preventDefault()
-
+  $('.clear-sleeps').show()
   const sleepdata = event.target
   const formData = getFormField(sleepdata)
   console.log(formData)

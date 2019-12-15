@@ -31,7 +31,7 @@ const updateSleep = () => {
 }
 
 const failure = () => {
-  $('.content').text('yikes.. something went wrong')
+  $('.user-message').text('yikes.. something went wrong')
 }
 
 // let getOneSleepData
