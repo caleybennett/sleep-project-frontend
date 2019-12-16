@@ -3,15 +3,31 @@
 const getSleepsTemplate = require('../templates/sleeps-listing.handlebars')
 const store = require('../store.js')
 
+// .then((results) => {
+//   if (results.length !== 0) {
+//     const showSleepsHtml = getSleepsTemplate({ sleeps: results })
+//     $('.content').html(showSleepsHtml)
+//   } else if (results.length < 1) {
+//     $('.user-message').text('That date doesnt exsist!!')
+//   }
+
 const getSleepsSuccess = (data) => {
   console.log('get sleeps success is working!')
   console.log('data is:', data)
-  const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
-  $('.content').html(showSleepsHtml)
-  $('.get-sleeps').hide()
-  store.sleeps = data.sleeps
-  console.log('store.sleep is', store.sleeps)
-  console.log('data.sleep is', data.sleeps)
+  // const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
+  if (data.sleeps.length !== 0) {
+    const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
+    $('.content').html(showSleepsHtml)
+    $('.get-sleeps').hide()
+  } else if (data.sleeps.length < 1) {
+    $('.user-message').text('No recorded sleeps, please enter a sleep!')
+    $('.clear-sleeps').hide()
+  }
+  // $('.content').html(showSleepsHtml)
+  //
+  // store.sleeps = data.sleeps
+  // console.log('store.sleep is', store.sleeps)
+  // console.log('data.sleep is', data.sleeps)
 }
 
 const createSleepSuccess = () => {

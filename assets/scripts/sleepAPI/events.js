@@ -91,9 +91,9 @@ const onShowSleep = event => {
   $('.clear-sleeps').show()
   const sleepdata = event.target
   const formData = getFormField(sleepdata)
-  console.log(formData)
-  const data = store.sleeps
-  console.log(data)
+  // console.log(formData)
+  // const data = store.sleeps
+  // console.log(data)
 
   const showSleep = sleep => {
     return sleep.date === formData.sleep.date
@@ -102,7 +102,7 @@ const onShowSleep = event => {
 
   api.getSleeps()
     .then((res) => {
-      console.log('api is making the request. formData is', formData)
+      // console.log('api is making the request. formData is', formData)
       const results = res.sleeps.filter(showSleep)
       return results
     })
@@ -113,28 +113,20 @@ const onShowSleep = event => {
       } else if (results.length < 1) {
         $('.user-message').text('That date doesnt exsist!!')
       }
-      console.log('results  is', results)
+      // console.log('results  is', results)
     })
     .catch(ui.failure)
-
-  //   console.log(data)
-
-  // console.log('get one success is working!')
-  // console.log('data is:', data)
-  // console.log('formData is', formData)
-  //
-  // if (formData === data.date) {
-
-  // }
-  // make a get request to the api to get all the sleeps
-
-  //   .then(ui.getOneSleep)
-  //   .then(console.log('get sleeps works'))
-  //   .then(oneSleep(formData, data))
-  //   .catch(ui.failure)
-  // console.log(formData)
-//   console.log(sleepByDate)
 }
+//
+// const onAverageSleep = event => {
+//   event.preventDefault()
+//   const sleepdata = event.target
+//   const formData = getFormField(sleepdata)
+//   const data = store.sleeps
+//   const avgSleep = sleep => {
+//     return sleep.date === formData.sleep.date
+//     }
+// }
 
 const addHandlers = event => {
   $('.get-sleeps').on('click', onGetSleeps)
@@ -145,6 +137,7 @@ const addHandlers = event => {
   $('.account-info-hide').on('click', onHideAccountInfo)
   $('.clear-sleeps').on('click', onClearSleeps)
   $('.get-sleeps-bydate').on('submit', onShowSleep)
+  // $('.avg-sleeps').on('submit', onAverageSleep)
 }
 
 module.exports = {
