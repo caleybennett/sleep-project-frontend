@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Sleep Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Noto+Sans+JP&display=swap" rel="stylesheet">
+    </head>
+      <body>
+      <h1>Sleep Tracker</h1>
+      <h3> Welcome to sleep tracker! </h3>
+      <div class= "user-message"> </div>
+      <div class= "before-auth">
+        <h4> New Here? Sign up!</h4>
+        <form class="sign-up">
+              <input type="email" name="credentials[email]" placeholder="email">
+              <input type="password" name="credentials[password]" placeholder="password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="password confirmation">
+              <button class="btn btn-primary"> Submit </button>
+        </form>
+      <h4> Been Here Before? Sign In</h4>
+      <form class="sign-in">
+        <input type="email" name="credentials[email]" placeholder="email">
+        <input type="password" name="credentials[password]" placeholder="password">
+        <button class="btn btn-primary"> Submit </button>
+      </form>
+      </div>
+      <div class="after-auth">
+        <button class="btn btn-link account-info-btn"> Account info </button>
+        <div class="account-info">
+        <nav>
+          <button class="btn btn-link  account-info-hide"> hide </button>
+          <form class="change-password">
+            <input type="password" name="passwords[old]" placeholder="old password">
+            <input type="password" name="passwords[new]" placeholder="new password">
+            <button class="btn btn-primary"> Change Password </button>
+          </form>
+          <!-- <h4> Sign out </h4> -->
+          <form class="sign-out">
+            <button class="btn btn-danger"> Sign Out </button>
+          </form>
+        </nav>
+      </div>
+        <div>
+          <form class="create-sleep">
+            <input type="date" name="sleep[date]" placeholder="date" required>
+            <input type="number" name="sleep[hours]" placeholder="hours slept" required>
+            <input type="text" name="sleep[food]" placeholder="what did you eat?" required>
+            <input type="text" name="sleep[exercise]" placeholder="did you exercise?" required>
+            <button class="btn btn-primary"> Log your sleep </button>
+          </form>
+          <form class="get-sleeps">
+            <button class="btn btn-primary get-sleeps"> Get all sleeps! </button>
+          </form>
+          <form class="get-sleeps-bydate">
+            <input type="date" name="sleep[date]" placeholder="date" required>
+            <button class="btn btn-primary get-sleeps-bydate"> Get one night's sleep! </button>
+          </form>
+          <button class="btn btn-primary clear-sleeps"> Clear sleeps! </button>
+        </div>
+        <!-- <form class="avg-sleeps">
+          <input class="start-date" type="date" name="sleep[date]" placeholder="start date">
+          <input class="end date" type="date" name="sleep[date]" placeholder="end date">
+          <button class="btn btn-primary avg-sleeps"> Average Hours Slept </button> -->
+        <div class="content"> </div>
+      </div>
+    </body>
+</html>
