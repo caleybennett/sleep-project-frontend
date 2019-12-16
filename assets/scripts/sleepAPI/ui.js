@@ -17,11 +17,16 @@ const getSleepsSuccess = (data) => {
   // const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
   if (data.sleeps.length !== 0) {
     const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
+    console.log('sleeps is not empty')
     $('.content').html(showSleepsHtml)
     $('.get-sleeps').hide()
+    $('.content').show()
   } else if (data.sleeps.length < 1) {
+    console.log('sleeps is empty')
     $('.user-message').text('No recorded sleeps, please enter a sleep!')
+    $('.content').hide()
     $('.clear-sleeps').hide()
+    $('.get-sleeps').show()
   }
   // $('.content').html(showSleepsHtml)
   //

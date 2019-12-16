@@ -44,9 +44,10 @@ const onDeleteSleep = event => {
 
   const sleepdata = $(event.target).data('id')
   api.deleteSleep(sleepdata)
-    .then(function (sleepdata) {
+    .then(function () {
       onGetSleeps(event)
     })
+    .catch(ui.failure)
 }
 
 const onUpdateSleep = event => {
