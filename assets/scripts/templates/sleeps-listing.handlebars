@@ -1,5 +1,4 @@
 {{#each sleeps as |sleep|}}
-  {{log sleep}}
   <section data-id="{{sleep.id}}" class="sleep-log" >
     <h6>Hours:</h6>
     <h4>
@@ -21,10 +20,10 @@
 
     <btn class= "btn btn-danger delete" data-id="{{sleep.id}}"> delete </btn>
     <form class="update-sleep" data-id="{{sleep.id}}">
-        <input type="date" name="sleep[date]" placeholder="date">
-        <input type="number" name="sleep[hours]" placeholder="hours slept">
-        <input type="text" name="sleep[food]" placeholder="what did you eat?">
-        <input type="text" name="sleep[exercise]" placeholder="did you exercise?">
+        <input type="date" name="sleep[date]" placeholder="date" required>
+        <input type="number" name="sleep[hours]" placeholder="hours slept" required>
+        <input type="text" name="sleep[food]" placeholder="what did you eat?" required>
+        <input type="text" name="sleep[exercise]" placeholder="did you exercise?" required>
         <button class="btn btn-primary"> update your sleep </button>
     </form>
   </section>

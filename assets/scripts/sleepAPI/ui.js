@@ -1,7 +1,7 @@
 'use strict'
 
 const getSleepsTemplate = require('../templates/sleeps-listing.handlebars')
-const store = require('../store.js')
+// const store = require('../store.js')
 
 // .then((results) => {
 //   if (results.length !== 0) {
@@ -12,17 +12,17 @@ const store = require('../store.js')
 //   }
 
 const getSleepsSuccess = (data) => {
-  console.log('get sleeps success is working!')
-  console.log('data is:', data)
+//  console.log('get sleeps success is working!')
+  // console.log('data is:', data)
   // const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
   if (data.sleeps.length !== 0) {
     const showSleepsHtml = getSleepsTemplate({ sleeps: data.sleeps })
-    console.log('sleeps is not empty')
+    //    console.log('sleeps is not empty')
     $('.content').html(showSleepsHtml)
     $('.get-sleeps').hide()
     $('.content').show()
   } else if (data.sleeps.length < 1) {
-    console.log('sleeps is empty')
+    // console.log('sleeps is empty')
     $('.user-message').text('No recorded sleeps, please enter a sleep!')
     $('.content').hide()
     $('.clear-sleeps').hide()

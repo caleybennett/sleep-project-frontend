@@ -49,17 +49,17 @@
       </div>
         <div>
           <form class="create-sleep">
-            <input type="date" name="sleep[date]" placeholder="date">
-            <input type="number" name="sleep[hours]" placeholder="hours slept">
-            <input type="text" name="sleep[food]" placeholder="what did you eat?">
-            <input type="text" name="sleep[exercise]" placeholder="did you exercise?">
+            <input type="date" name="sleep[date]" placeholder="date" required>
+            <input type="number" name="sleep[hours]" placeholder="hours slept" required>
+            <input type="text" name="sleep[food]" placeholder="what did you eat?" required>
+            <input type="text" name="sleep[exercise]" placeholder="did you exercise?" required>
             <button class="btn btn-primary"> Log your sleep </button>
           </form>
           <form class="get-sleeps">
             <button class="btn btn-primary get-sleeps"> Get all sleeps! </button>
           </form>
           <form class="get-sleeps-bydate">
-            <input type="date" name="sleep[date]" placeholder="date">
+            <input type="date" name="sleep[date]" placeholder="date" required>
             <button class="btn btn-primary get-sleeps-bydate"> Get one night's sleep! </button>
           </form>
           <button class="btn btn-primary clear-sleeps"> Clear sleeps! </button>

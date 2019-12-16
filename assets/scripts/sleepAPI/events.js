@@ -2,7 +2,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormField = require('../../../lib/get-form-fields')
 const getSleepsTemplate = require('../templates/sleeps-listing.handlebars')
-const store = require('../store.js')
+// const store = require('../store.js')
 // example from auth api
 // const onSignUp = function (event) {
 //   event.preventDefault()
@@ -31,7 +31,7 @@ const onCreateSleep = event => {
   event.preventDefault()
 
   const form = event.target
-  console.log(event.target.value)
+  // console.log(event.target.value)
   const formData = getFormField(form)
 
   api.createSleep(formData)
@@ -47,6 +47,7 @@ const onDeleteSleep = event => {
     .then(function () {
       onGetSleeps(event)
     })
+    .then($('.user-message').text('You deleted a sleep'))
     .catch(ui.failure)
 }
 
@@ -61,7 +62,7 @@ const onUpdateSleep = event => {
       onGetSleeps(event)
     })
     .then(ui.updateSleep)
-    .catch(console.error)
+    .catch(ui.failure)
 }
 
 const onShowAccountInfo = event => {

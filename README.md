@@ -1,16 +1,16 @@
 # Sleep project front end
-## Backend Information:
+## Back-end Information:
 
-Backend Repo:https://github.com/caleybennett/sleep-project-backend
-Backend Deployed site: https://github.com/caleybennett/sleep-project-backend
+Back-end Repo:https://github.com/caleybennett/sleep-project-backend
+Back-end Deployed site: https://github.com/caleybennett/sleep-project-backend
 
 ## Technologies Used
 
-Javascript, jQuery, HTML, CSS
+Javascript, jQuery, HTML, CSS, handlebars
 
 ## Planning
 
-After creating the backend for this project I focused first on getting the User
+After creating the back-end for this project I focused first on getting the User
 authentication to work. After making sure a user can sign in, sign up, sign out,
 and change password, I moved onto making my sleep tracker work.
 
@@ -30,21 +30,20 @@ use two dates on one form and generate all the dates in between these dates.
 Can enter empty data and have it logged as a "sleep"
 
 ## Wireframes
-<img src="https://imgur.com/WKfnNK6" alt="wireframes">
-<img src="https://imgur.com/IHBFpW2" alt="wireframes">
-<img src="https://imgur.com/EH3b1Aw" alt="wireframes">
-<img src="https://imgur.com/UQpJRFP" alt="wireframes">
-<img src="https://imgur.com/2drNeyy" alt="wireframes">
+- https://imgur.com/WKfnNK6
+- https://imgur.com/IHBFpW2
+- https://imgur.com/EH3b1Aw
+- https://imgur.com/UQpJRFP
+- https://imgur.com/2drNeyy
 
 ## User Stories
-As a not signed in user, I want to be able to sign up.
-As a not signed in user, I want to be able to sign in.
-As a not signed in user, I don't want to be able to see any other users "sleeps".
-As a signed-in user, I want to be able to create a new "sleep".
-As a signed-in user, I want to be able to read my previous "sleeps".
-As a signed-in user, I want to be able to read a previous "sleep" by searching by date.
-As a signed-in user, I want to be able to update my "sleep" by entering a date.
-As a signed-in user, I want to be able to delete a "sleep" by entering the date it was recorded.
-As a signed-in user, I want to be able to change my password.
-As a signed-in user, I want to be able to log out.
-As a new user, I do not want to see any other users data.
+- As a not signed in user, I want to be able to sign up.
+- As a not signed in user, I want to be able to sign in.
+- As a not signed in user, I don't want to be able to see any other users "sleeps".
+- As a user, I want to be able to create a new "sleep".
+- As a signed-in user, I want to be able to read my previous "sleeps".
+- As a signed-in user, I want to be able to read a previous "sleep" by searching by date.
+- As a signed-in user, I want to be able to delete a "sleep" by entering the date it was recorded.
+- As a signed-in user, I want to be able to change my password.
+- As a signed-in user, I want to be able to log out.
+- As a new user, I do not want to see any other users data.
