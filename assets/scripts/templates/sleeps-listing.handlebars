@@ -1,4 +1,8 @@
+<div class="container">
+   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+   <div class="carousel-inner">
 {{#each sleeps as |sleep|}}
+<div class="carousel-item {{#if @first}}active{{/if}}">
   <section data-id="{{sleep.id}}" class="sleep-log" >
     <h6>Hours:</h6>
     <h4>
@@ -27,5 +31,18 @@
         <button class="btn btn-primary"> update your sleep </button>
     </form>
   </section>
+</div>
 
 {{/each}}
+<div class="carousel-item"><h3>ADD MORE SLEEPS!</h3></div>
+<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+     <span class="sr-only">Back</span>
+   </a>
+   <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <span class="sr-only">Next</span>
+   </a>
+ </div>
+</div>
+</div>
